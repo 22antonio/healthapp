@@ -1,0 +1,4 @@
+<!-- list of the healt centers by city -->
+<ul class="nav nav-pills nav-stacked">
+  <li (click)="onSelect(HealthCenter)" *ngFor="let HealthCenter of healthCenters"><a>{{HealthCenter.address.city}}</a></li>
+</ul>

@@ -1,0 +1,18 @@
+<!-- Form schema of health center, displays the health center and only service can be updated -->
+<div>
+    <form>
+        <h2>{{HealthCenter.name}}</h2>
+        <h3>{{HealthCenter.address.street}}
+            {{HealthCenter.address.city}}
+            {{HealthCenter.address.state}}</h3>
+        <h3>{{HealthCenter.phonenumber}}</h3>
+        <div *ngIf="editService" class="form-group">
+          <input type="input" class="form-control" name="services" required placeholder="services"
+          [(ngModel)]="HealthCenter.services">
+        </div>
+        <h3 *ngIf="!editService" (click)="onServiceClick()">{{HealthCenter.services}}</h3>
+        <h3>{{HealthCenter.website}}</h3>
+        <button type="button" (click)="updateHealthCenter()" class="btn btn-primary">Update</button>
+        <button type="button" (click)="deleteHealthCenter()" class="btn btn-danger">Delete</button>
+    </form>
+</div>
